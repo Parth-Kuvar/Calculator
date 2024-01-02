@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+       
+
+        .calculator{
+            background-color:gray;
+            text-align:center;
+            padding:7px;
+            width:auto;
+            margin:0px auto;
+            border:10px solid black;
+            border-radius:10px;
+            height:auto;
+            width:370px;
+        }
+        .calculator input{
+            text-align:right;
+            width:96%;
+            padding:8px 4px;
+            border-radius:6px;
+            font-size:25px;
+            height: 40px;
+            border: 5px solid black;
+        }
+        .calculator table{
+            width:85%;
+            margin:2px auto;
+        }
+
+        .calculator table tr td{
+            border:3px solid #808080;
+            padding:11px 32px;
+            font-size:23px;
+            cursor: pointer;
+            background-color:rgb(220, 204, 204);
+            border-radius:7px;
+        }
+
+        .calculator table tr td:hover{
+            background-color: burlywood;
+            color:black;
+        }
+        .calculator table tr td .Clearit{background-color: rgb(230, 48, 48);color: rgb(255, 255, 255);border: 3px solid black;border-radius: 7px;font-size:20px;padding:10px 22px;cursor:pointer;width:60px;}
+    </style>
+</head>
+<body>
+    <header><h1>Maths Calculator</h1></header>
+    <hr color="black">
+    <nav><h3>Activity 7</h3></nav>
+    <hr color="black">
+    <main>
+        <div class='calculator'> 
+        	<input type='text' id='calc' name='calc' readonly>
+            <table>
+            	<tr>
+                	<td onclick ='calc.value += 1'> 1 </td>
+                    <td onclick ='calc.value += 2'> 2 </td>
+                    <td onclick ='calc.value += 3'> 3 </td>
+                    <td class="Operator" onclick ='calc.value += "+"' style="background-color:rgb(27, 26, 26); color: white;">+</td>
+                </tr>
+                <tr>
+                	<td onclick ='calc.value += 4'> 4 </td>
+                    <td onclick ='calc.value += 5'> 5 </td>
+                    <td onclick ='calc.value += 6'> 6 </td>
+                    <td class="Operator" onclick ='calc.value += "-"' style="background-color:rgb(27, 26, 26); color: white;"> - </td>
+                </tr>
+                <tr>
+                	<td onclick ='calc.value += 7'> 7 </td>
+                    <td onclick ='calc.value += 8'> 8 </td>
+                    <td onclick ='calc.value += 9'> 9 </td>
+                    <td class="Operator" onclick ='calc.value += "*"' style="background-color:rgb(27, 26, 26); color: white;"> x </td>
+                </tr>
+                <tr>
+                	<td class="Clearit" onclick ='calc.value = ""' style="background-color:rgb(203, 45, 45); color: white;"> C </td>
+                    <td onclick ='calc.value += 0'> 0 </td>
+                    <td onclick ='calc.value = eval(calc.value)'> = </td>
+                    <td class="Operator" onclick ='calc.value += "/"' style="background-color:rgb(27, 26, 26); color: white;"> / </td>
+                </tr>
+                <tr>
+                	<td class="Operator" onclick ='calc.value += "00"'> 00 </td>
+                    <td class="Operator" onclick ='calc.value += "%"'> % </td>
+                    <td class="Operator" onclick ='calc.value += "."'> . </td>
+                    <td class="Operator" onclick ='calc.value = removeLastCharacter(calc.value);' style="background-color:rgb(27, 26, 26); color: white;"> &#8592; </td>
+                </tr>
+             </table>
+                 
+        </div>
+    </main>
+    <script>
+         function removeLastCharacter(str) {
+    return str.slice(0, -1);
+}
+
+// Example usage:
+// let originalString = "Hello, World!";
+// let modifiedString = removeLastCharacter(originalString);
+// console.log(modifiedString);  // Output: Hello, World
+    </script>
+</body>
+</html>
